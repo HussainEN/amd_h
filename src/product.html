@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>كل المنتجات | سبِّق</title>
+  <link rel="stylesheet" href="css/product.css">
+  <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;700&display=swap" rel="stylesheet">
+</head>
+<body>
+
+  <header class="main-header">
+    <div class="logo">
+      <a href="home.html"><img src="img/logo.png" alt="شعار سبِّق"></a>
+    </div>
+    <nav class="nav-links">
+      <button onclick="navigate('index.html')">الرئيسية</button>
+      <button onclick="navigate('product.html')">المنتجات</button>
+      <button onclick="navigate('plan.html')">خطتي الشرائية</button>
+      <button onclick="navigate('payment.html')">مشترياتي</button>
+    </nav>
+  </header>
+
+  <section class="hero">
+    <div class="hero-content">
+      <h2>تخطيطك بذكاء، وشراءك براحة</h2>
+      <p>سبِّق يتيح لك التوفير الذكي لكل ما تحتاجه، في الوقت المناسب.</p>
+
+
+<div class="search-bar">
+  <input type="text" id="searchInput" placeholder="ابحث عن اسم المنتج...">
+
+  <select id="brandFilter">
+    <option value="">كل الماركات</option>
+    <option value="Apple">Apple</option>
+    <option value="Samsung">Samsung</option>
+    <option value="Dell">Dell</option>
+    <option value="Canon">Canon</option>
+    <option value="Sony">Sony</option>
+    <option value="Microsoft">Microsoft</option>
+    <option value="Logitech">Logitech</option>
+    <option value="Redragon">Redragon</option>
+    <option value="Toyota">Toyota</option>
+    <option value="Hyundai">Hyundai</option>
+    <option value="Nissan">Nissan</option>
+    <option value="Ford">Ford</option>
+    <option value="Kia">Kia</option>
+    <option value="Chevrolet">Chevrolet</option>
+    <option value="Mazda">Mazda</option>
+    <option value="Jeep">Jeep</option>
+    <option value="Tesla">Tesla</option>
+  </select>
+
+  <select id="categoryFilter">
+    <option value="">كل الفئات</option>
+    <option value="منتجات تقنية">منتجات تقنية</option>
+    <option value="منتجات سفر">منتجات سفر</option>
+    <option value="منتجات سيارات">منتجات سيارات</option>
+  </select>
+
+  <select id="sortFilter">
+    <option value="">ترتيب حسب</option>
+    <option value="highest">الأعلى سعرًا</option>
+    <option value="lowest">الأرخص</option>
+    <option value="newest">الأحدث</option>
+  </select>
+</div>
+
+    </div>
+  </section>
+
+  <main>
+    <section id="product" class="section active">
+      <h2>المنتجات</h2>
+      <div id="product-categories"></div>
+    </section>
+  </main>
+
+
+
+<!-- النافذة المنبثقة -->
+<!-- نافذة خطة الشراء -->
+<div id="planModal" style="display:none;" class="modal">
+  <div class="modal-content">
+    <h3>خطة شراء: <span id="modalProductName"></span></h3>
+    <form id="planForm">
+      <label>السعر</label>
+      <input type="number" id="modalPrice" required>
+      <label>مدة الخطة (بالشهور)</label>
+      <input type="number" id="modalDuration" min="1" max="12" required>
+      <div class="modal-buttons">
+        <button type="submit" class="confirm-btn">تأكيد</button>
+        <button type="button" class="cancel-btn" onclick="closePlanModal()">إلغاء</button>
+      </div>
+    </form>
+  </div>
+</div>
+
+  <script src="js/product.js"></script>
+</body>
+</html>

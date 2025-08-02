@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+  <meta charset="UTF-8">
+  <title>مشترياتي | سبِّق</title>
+  <link rel="stylesheet" href="css/payment.css">
+  <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;700&display=swap" rel="stylesheet">
+<script src="https://cdnjs.cloudflare.com/ajax/libs/pdfmake/0.3.0-beta.5/pdfmake.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/pdfmake/0.3.0-beta.5/vfs_fonts.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+<body>
+  <header class="main-header">
+    <div class="logo">
+      <a href="home.html"><img src="img/logo.png" alt="شعار سبِّق" height="50"></a>
+    </div>
+    <nav class="nav-links">
+      <button onclick="navigate('index.html')">الرئيسية</button>
+      <button onclick="navigate('product.html')">المنتجات</button>
+      <button onclick="navigate('plan.html')">خطتي الشرائية</button>
+      <button onclick="navigate('payment.html')">مشترياتي</button>
+    </nav>
+  </header>
+
+  <section class="payments-section">
+    <h1>مشترياتي</h1>
+    <div id="invoicesContainer" class="invoices"></div>
+  </section>
+
+  <canvas id="invoiceChart" width="400" height="200" style="display: none;"></canvas>
+  <button onclick="generatePDF()"> تحميل تقرير </button>
+
+  <script src="js/payment.js"></script>
+</body>
+</html>
